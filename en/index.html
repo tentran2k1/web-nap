@@ -135,29 +135,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label>ACCOUNT TYPE <span>*</span></label>
-                  <select>
-                    <option>-- Select login gateway --</option>
+                  <label>GAME <span>*</span></label>
+                  <select id="game-select" required>
+                    <option value="">-- Select game --</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>SERVER <span>*</span></label>
-                  <input placeholder="E.g.: S1, S15, Asia" />
+                  <label>ACCOUNT TYPE <span>*</span></label>
+                  <select id="login-select" required>
+                    <option>-- Select login gateway --</option>
+                  </select>
                 </div>
               </div>
               <div class="form-group">
+                <label>SERVER <span>*</span></label>
+                <input placeholder="E.g.: S1, S15, Asia" required />
+              </div>
+              <div class="form-group">
                 <label>CHARACTER ID <span>*</span></label>
-                <input placeholder="Enter your in-game character ID" />
+                <input placeholder="Enter your in-game character ID" required />
               </div>
               <div class="form-group">
                 <label>TOP-UP PACKAGE 1 <span>*</span></label>
-                <select>
+                <select id="package-1-select" required>
                   <option>Select package</option>
                 </select>
               </div>
               <div class="form-group">
                 <label>TOP-UP PACKAGE 2</label>
-                <select>
+                <select id="package-2-select">
                   <option>Select package</option>
                 </select>
               </div>

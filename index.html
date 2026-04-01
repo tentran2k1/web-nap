@@ -135,29 +135,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label>LOẠI TÀI KHOẢN <span>*</span></label>
-                  <select>
-                    <option>-- Chọn cổng đăng nhập --</option>
+                  <label>GAME <span>*</span></label>
+                  <select id="game-select" required>
+                    <option value="">-- Chọn game --</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>SERVER <span>*</span></label>
-                  <input placeholder="VD: S1, S15, Asia" />
+                  <label>LOẠI TÀI KHOẢN <span>*</span></label>
+                  <select id="login-select" required>
+                    <option>-- Chọn cổng đăng nhập --</option>
+                  </select>
                 </div>
               </div>
               <div class="form-group">
+                <label>SERVER <span>*</span></label>
+                <input placeholder="VD: S1, S15, Asia" required />
+              </div>
+              <div class="form-group">
                 <label>ID NHÂN VẬT <span>*</span></label>
-                <input placeholder="Nhập ID nhân vật trong game" />
+                <input placeholder="Nhập ID nhân vật trong game" required />
               </div>
               <div class="form-group">
                 <label>GÓI NẠP 1 <span>*</span></label>
-                <select>
+                <select id="package-1-select" required>
                   <option>Chọn gói nạp</option>
                 </select>
               </div>
               <div class="form-group">
                 <label>GÓI NẠP 2</label>
-                <select>
+                <select id="package-2-select">
                   <option>Chọn gói nạp</option>
                 </select>
               </div>
