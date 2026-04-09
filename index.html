@@ -216,7 +216,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
       </section>
+      <div class="banner-loading active">
+				<div class="opacity"></div>
+				<img src="assets/web-header/images/loading/{{locate}}_LAN1_Frame1.png" alt="banner" class="" id="banner-loading-image">
+			</div>
     </div>
+    <script>
+			(function () {
+				var bannerLoading = document.querySelector('.banner-loading');
+				if (bannerLoading) {
+					setTimeout(function () {
+						bannerLoading.classList.remove('active');
+					}, 3000);
+				}
+
+				var bannerImage = document.getElementById('banner-loading-image');
+				if (!bannerImage) return;
+
+				var locate = 'VN';
+				var randomLan = Math.floor(Math.random() * 2) + 1;
+				var randomFrame = Math.floor(Math.random() * 5) + 1;
+				bannerImage.src = 'assets/web-header/images/loading/' + locate + '_LAN' + randomLan + '_Frame' + randomFrame + '.png';
+			})();
+		</script>
     <script>
       var currentPool;
       var varMS = {
