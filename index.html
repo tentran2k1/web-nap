@@ -218,26 +218,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </section>
       <div class="banner-loading active">
 				<div class="opacity"></div>
-				<img src="assets/web-header/images/loading/{{locate}}_LAN1_Frame1.png" alt="banner" class="" id="banner-loading-image">
+				<div class="ads">
+					<div class="banner-loading-close" id="banner-loading-close">&times;</div>
+					<img src="" alt="banner" class="" id="banner-loading-image">
+				</div>
+
 			</div>
     </div>
     <script>
 			(function () {
 				var bannerLoading = document.querySelector('.banner-loading');
+				var btnClose = document.getElementById('banner-loading-close');
+				var redirectTimer;
+
+				function closeBanner() {
+				if (bannerLoading) 
+				bannerLoading.classList.remove('active');
+
+				clearTimeout(redirectTimer);
+				}
+
+				if (btnClose) {
+				btnClose.addEventListener('click', closeBanner);
+				}
+
+				var opacity = bannerLoading ? bannerLoading.querySelector('.opacity') : null;
+				if (opacity) {
+				opacity.addEventListener('click', closeBanner);
+				}
+
 				if (bannerLoading) {
-					setTimeout(function () {
-						bannerLoading.classList.remove('active');
-					}, 3000);
+				redirectTimer = setTimeout(function () {
+				window.location.href = 'https://lightandnight.vnggames.com/coming-soon';
+				}, 3000);
 				}
 
 				var bannerImage = document.getElementById('banner-loading-image');
-				if (!bannerImage) return;
+				if (! bannerImage) 
+				return;
+
 
 				var locate = 'VN';
-				var randomLan = Math.floor(Math.random() * 2) + 1;
 				var randomFrame = Math.floor(Math.random() * 5) + 1;
-				bannerImage.src = 'assets/web-header/images/loading/' + locate + '_LAN' + randomLan + '_Frame' + randomFrame + '.png';
-			})();
+				bannerImage.src = 'assets/web-header/images/loading/LAN-2-' + locate + '-' + randomFrame + '.png';
+				})();
 		</script>
     <script>
       var currentPool;
