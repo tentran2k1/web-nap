@@ -232,20 +232,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
    <script>
 			(function () {
+				var bannerLoading = document.querySelector('.banner-loading');
 				var btnClose = document.getElementById('banner-loading-close');
+
+				function closeBanner() {
+				if (bannerLoading)
+				bannerLoading.classList.remove('active');
+				}
 
 				function goRedirect() {
 				window.location.href = 'https://lightandnight.onelink.me/O5mA/lmp';
 				}
 
 				if (btnClose) {
-				btnClose.addEventListener('click', goRedirect);
+				btnClose.addEventListener('click', closeBanner);
+				}
+
+				var opacity = bannerLoading ? bannerLoading.querySelector('.opacity') : null;
+				if (opacity) {
+				opacity.addEventListener('click', closeBanner);
 				}
 
 				var bannerImage = document.getElementById('banner-loading-image');
 				if (! bannerImage)
 				return;
 
+				bannerImage.addEventListener('click', goRedirect);
 				bannerImage.src = '../assets/web-header/images/loading/ENG-500.png';
 				})();
 		</script>
